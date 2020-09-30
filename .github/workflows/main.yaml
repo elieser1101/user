@@ -27,9 +27,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-          path: go/src/github.com/microservices-demo/user
 
       - uses: actions/setup-go@v1
         with:
