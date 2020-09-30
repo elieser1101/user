@@ -54,9 +54,6 @@ jobs:
       - name: Create cover profile
         run: make coverprofile
 
-      - name: Run Docker Test
-        run: make dockertest
-
       - name: Submit Coveralls
         env:
           COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -67,7 +64,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           push: false
-          dockerfile: docker/user/Dockerfile
+          dockerfile: docker/user/Dockerfile-release
           repository: ${{ env.GROUP }}/${{ env.REPO }}
           tag_with_ref: true
           tag_with_sha: true
